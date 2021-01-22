@@ -1,0 +1,17 @@
+{
+  "name": "@ornikar/yo",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "engines": {
+    "node": ">= 12.10.0"
+  },
+  "bin": {
+    "yornikar": "./bin/index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "prettier": "^2.2.1",
+    "yeoman-environment": "^2.10.3",
+    "yeoman-generator": "^4.12.0"
+  }
+}
