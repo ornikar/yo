@@ -1,4 +1,4 @@
-#!/usr/bin/env node --abort-on-uncaught-exception
+#!/usr/bin/env node
 
 'use strict';
 
