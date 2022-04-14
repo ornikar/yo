@@ -18,3 +18,5 @@ yornikar
 ## What's included
 
 - vscode generator: generate `.vscode/settings.json` and `.vscode/extensions.json`.
+- yarn berry.
+- package.json "repository" field for monorepos.
