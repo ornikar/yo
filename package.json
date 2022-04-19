@@ -21,7 +21,7 @@
   "devDependencies": {
     "@ornikar/eslint-config": "17.0.0",
     "@ornikar/prettier-config": "4.0.1",
-    "@ornikar/repo-config": "7.2.1",
+    "@ornikar/repo-config": "8.2.0",
     "@yarnpkg/parsers": "2.5.0",
     "eslint": "8.8.0"
   },
