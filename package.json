@@ -20,15 +20,15 @@
   },
   "devDependencies": {
     "@ornikar/eslint-config": "17.0.0",
-    "@ornikar/prettier-config": "4.0.1",
-    "@ornikar/repo-config": "8.2.0",
+    "@ornikar/prettier-config": "4.0.5",
+    "@ornikar/repo-config": "8.2.1",
     "@yarnpkg/parsers": "2.5.0",
     "eslint": "8.8.0"
   },
   "dependencies": {
     "@lerna/package-graph": "4.0.0",
     "@lerna/project": "4.0.0",
-    "@ornikar/lerna-config": "6.1.0",
+    "@ornikar/lerna-config": "6.3.4",
     "emoji-regex": "10.0.0",
     "json5": "2.2.0",
     "prettier": "2.5.1",
