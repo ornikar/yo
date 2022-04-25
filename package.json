@@ -29,7 +29,7 @@
     "@lerna/package-graph": "4.0.0",
     "@lerna/project": "4.0.0",
     "@ornikar/lerna-config": "6.3.4",
-    "emoji-regex": "10.0.0",
+    "emoji-regex": "10.1.0",
     "json5": "2.2.1",
     "prettier": "2.6.2",
     "yeoman-environment": "^3.9.1",
