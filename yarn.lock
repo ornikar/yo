@@ -752,14 +752,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ornikar/repo-config@npm:8.3.1":
-  version: 8.3.1
-  resolution: "@ornikar/repo-config@npm:8.3.1"
+"@ornikar/repo-config@npm:8.3.2":
+  version: 8.3.2
+  resolution: "@ornikar/repo-config@npm:8.3.2"
   dependencies:
     "@commitlint/cli": 16.2.3
     "@ornikar/commitlint-config": ^4.0.3
     husky: 7.0.4
-    lint-staged: 12.3.8
+    lint-staged: 12.4.0
     prettier-plugin-properties: 0.1.0
     semver: ^7.3.5
     which-pm-runs: ^1.1.0
@@ -770,7 +770,7 @@ __metadata:
     ornikar-prettier-check: bin/ornikar-prettier-check.sh
     ornikar-prettier-fix: bin/ornikar-prettier-fix.sh
     ornikar-repo-config-postinstall: bin/ornikar-repo-config-postinstall.js
-  checksum: b20f1c231b2783c7aaf57f6c89527648baa6d4958cdb493ad895771da85615b54623c4e4daf972a05c9ec1cc1261a54dbeeaa3b6bb242b6b544b15ef1c3b5877
+  checksum: 6c1bcf50296ce68e707f7b4becd7d90f9e51f369f827c5a797e3cc7b542d350cef9ae211ee368b84c98206ed744411d5695f7eaa88a9d507341482801ac20295
   languageName: node
   linkType: hard
 
@@ -783,7 +783,7 @@ __metadata:
     "@ornikar/eslint-config": 18.6.0
     "@ornikar/lerna-config": 6.3.4
     "@ornikar/prettier-config": 4.0.5
-    "@ornikar/repo-config": 8.3.1
+    "@ornikar/repo-config": 8.3.2
     "@yarnpkg/parsers": 2.5.0
     emoji-regex: 10.1.0
     eslint: 8.14.0
@@ -3735,9 +3735,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:12.3.8":
-  version: 12.3.8
-  resolution: "lint-staged@npm:12.3.8"
+"lint-staged@npm:12.4.0":
+  version: 12.4.0
+  resolution: "lint-staged@npm:12.4.0"
   dependencies:
     cli-truncate: ^3.1.0
     colorette: ^2.0.16
@@ -3755,7 +3755,7 @@ __metadata:
     yaml: ^1.10.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: af6a89ae4244e4eac7180c6e7da452f378fd156ff38eaa666ecbb78f1e2efb7f1a9fc766dcc1cdde2bd76e03da68e602056ca9d2f1c6e46cf10aa83d20bf4d49
+  checksum: e25b273a73b79f224ff1ccb22432c34a9050fe8318b9cf7e08c748e2efc80e1f48ed4f2aa61cd16a701bb7fd6323ecf0d94a497c97732db04f2b5382d6b70131
   languageName: node
   linkType: hard
 
