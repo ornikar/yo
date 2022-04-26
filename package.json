@@ -16,10 +16,11 @@
     ]
   },
   "scripts": {
-    "postinstall": "ornikar-repo-config-postinstall"
+    "postinstall": "ornikar-repo-config-postinstall",
+    "lint:eslint": "eslint --quiet --report-unused-disable-directives ."
   },
   "devDependencies": {
-    "@ornikar/eslint-config": "17.0.0",
+    "@ornikar/eslint-config": "18.4.0",
     "@ornikar/prettier-config": "4.0.5",
     "@ornikar/repo-config": "8.3.1",
     "@yarnpkg/parsers": "2.5.0",
