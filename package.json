@@ -17,6 +17,7 @@
   },
   "scripts": {
     "postinstall": "ornikar-repo-config-postinstall",
+    "lint:prettier": "prettier --check .",
     "lint:eslint": "eslint --quiet --report-unused-disable-directives ."
   },
   "devDependencies": {
