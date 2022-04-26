@@ -16,7 +16,8 @@
     ]
   },
   "scripts": {
-    "postinstall": "ornikar-repo-config-postinstall"
+    "postinstall": "ornikar-repo-config-postinstall",
+    "lint:eslint": "eslint --quiet --report-unused-disable-directives ."
   },
   "devDependencies": {
     "@ornikar/eslint-config": "18.4.0",
