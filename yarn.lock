@@ -785,12 +785,15 @@ __metadata:
     "@ornikar/prettier-config": 4.0.5
     "@ornikar/repo-config": 8.3.2
     "@yarnpkg/parsers": 2.5.0
+    check-package-dependencies: 3.5.2
     emoji-regex: 10.1.0
     eslint: 8.14.0
     json5: 2.2.1
+    mem-fs: 2.2.1
+    mem-fs-editor: 9.4.0
     prettier: 2.6.2
-    yeoman-environment: ^3.9.1
-    yeoman-generator: ^5.6.1
+    yeoman-environment: 3.9.1
+    yeoman-generator: 5.6.1
   bin:
     yornikar: ./bin/index.js
   languageName: unknown
@@ -1472,6 +1475,20 @@ __metadata:
   version: 0.7.0
   resolution: "chardet@npm:0.7.0"
   checksum: 6fd5da1f5d18ff5712c1e0aed41da200d7c51c28f11b36ee3c7b483f3696dabc08927fc6b227735eb8f0e1215c9a8abd8154637f3eff8cada5959df7f58b024d
+  languageName: node
+  linkType: hard
+
+"check-package-dependencies@npm:3.5.2":
+  version: 3.5.2
+  resolution: "check-package-dependencies@npm:3.5.2"
+  dependencies:
+    chalk: ^4.1.0
+    glob: ^7.1.6
+    semver: ^7.3.4
+    type-fest: ^2.0.0
+  bin:
+    check-package-dependencies: bin/check-package-dependencies.js
+  checksum: 5af08118fa8cefec8267a29c0e2ec801dca0b64f8aebcfb97be7cdb5e89912ac913f3a18228542cfbae7fa4cca75e4209c12e678391832ff16c9a6956a6d398b
   languageName: node
   linkType: hard
 
@@ -3972,7 +3989,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mem-fs-editor@npm:^8.1.2 || ^9.0.0":
+"mem-fs-editor@npm:9.4.0, mem-fs-editor@npm:^8.1.2 || ^9.0.0":
   version: 9.4.0
   resolution: "mem-fs-editor@npm:9.4.0"
   dependencies:
@@ -3995,7 +4012,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mem-fs@npm:^1.2.0 || ^2.0.0":
+"mem-fs@npm:2.2.1, mem-fs@npm:^1.2.0 || ^2.0.0":
   version: 2.2.1
   resolution: "mem-fs@npm:2.2.1"
   dependencies:
@@ -5891,6 +5908,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"type-fest@npm:^2.0.0":
+  version: 2.12.2
+  resolution: "type-fest@npm:2.12.2"
+  checksum: ee69676da1f69d2b14bbec28c7b95220a3221ab14093f54bde179c59e185a80470859553eada535ec35d8637a245c2f0efe9d7c99cc46a43f3b4c7ef64db7957
+  languageName: node
+  linkType: hard
+
 "typedarray-to-buffer@npm:^3.1.5":
   version: 3.1.5
   resolution: "typedarray-to-buffer@npm:3.1.5"
@@ -6301,7 +6325,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yeoman-environment@npm:^3.9.1":
+"yeoman-environment@npm:3.9.1":
   version: 3.9.1
   resolution: "yeoman-environment@npm:3.9.1"
   dependencies:
@@ -6349,7 +6373,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yeoman-generator@npm:^5.6.1":
+"yeoman-generator@npm:5.6.1":
   version: 5.6.1
   resolution: "yeoman-generator@npm:5.6.1"
   dependencies:

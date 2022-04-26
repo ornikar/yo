@@ -26,6 +26,7 @@
     "@ornikar/prettier-config": "4.0.5",
     "@ornikar/repo-config": "8.3.2",
     "@yarnpkg/parsers": "2.5.0",
+    "check-package-dependencies": "3.5.2",
     "eslint": "8.14.0"
   },
   "dependencies": {
@@ -34,8 +35,10 @@
     "@ornikar/lerna-config": "6.3.4",
     "emoji-regex": "10.1.0",
     "json5": "2.2.1",
+    "mem-fs": "2.2.1",
+    "mem-fs-editor": "9.4.0",
     "prettier": "2.6.2",
-    "yeoman-environment": "^3.9.1",
-    "yeoman-generator": "^5.6.1"
+    "yeoman-environment": "3.9.1",
+    "yeoman-generator": "5.6.1"
   }
 }
