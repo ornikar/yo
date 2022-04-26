@@ -1,6 +1,7 @@
 {
   "npm.packageManager": "yarn",
   "search.exclude": {
+    "**/.yarn": true,
     "**/yarn-error.log": true,
     "**/yarn.lock": true
   },
@@ -11,6 +12,12 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.organizeImports": false
+  },
+
+  // jest config
+  "jest.autoRun": {
+    "watch": false,
+    "onStartup": []
   },
 
   // eslint config
