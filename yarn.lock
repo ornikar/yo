@@ -711,21 +711,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ornikar/eslint-config@npm:18.6.0":
-  version: 18.6.0
-  resolution: "@ornikar/eslint-config@npm:18.6.0"
+"@ornikar/eslint-config@npm:18.7.0":
+  version: 18.7.0
+  resolution: "@ornikar/eslint-config@npm:18.7.0"
   dependencies:
     eslint-config-airbnb-base: ^15.0.0
     eslint-config-prettier: ^8.2.0
     eslint-plugin-import: ^2.25.4
     eslint-plugin-jsx-a11y: ^6.4.1
     eslint-plugin-node: ^11.1.0
+    eslint-plugin-security: ^1.5.0
     eslint-plugin-simple-import-sort: ^7.0.0
     eslint-plugin-unicorn: ^42.0.0
   peerDependencies:
     eslint: ^8.9.0
     prettier: ^2.2.1
-  checksum: 724ffd67076576402285180124650e39090a16888806444f49dddd4c96dc36339a301a68824935e0d78369bf184bd4e89c303f848557793f9cf1c802d9a62ca1
+  checksum: 0bc82f64036b9937b94d25c3efdb266773a3af38f706e60acd2bc870183cd99187b7fb939a4f3acaa2c5180f8cf258a59830622a236ebbde45ea31f563f41ce1
   languageName: node
   linkType: hard
 
@@ -780,7 +781,7 @@ __metadata:
   dependencies:
     "@lerna/package-graph": 4.0.0
     "@lerna/project": 4.0.0
-    "@ornikar/eslint-config": 18.6.0
+    "@ornikar/eslint-config": 18.7.0
     "@ornikar/lerna-config": 6.3.4
     "@ornikar/prettier-config": 4.0.5
     "@ornikar/repo-config": 8.3.2
@@ -2355,6 +2356,15 @@ __metadata:
   peerDependencies:
     eslint: ">=5.16.0"
   checksum: 5804c4f8a6e721f183ef31d46fbe3b4e1265832f352810060e0502aeac7de034df83352fc88643b19641bb2163f2587f1bd4119aff0fd21e8d98c57c450e013b
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-security@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "eslint-plugin-security@npm:1.5.0"
+  dependencies:
+    safe-regex: ^2.1.1
+  checksum: c51c9d43d1ef1eaf803d136ae73522369f1e0b4f2633a56fc3226afd64ad3936943080bf506353c25422d1d73e8395946d016847e0ac5c0b5886c394fe848b9f
   languageName: node
   linkType: hard
 
