@@ -22,7 +22,7 @@
     "lint:eslint": "eslint --quiet --report-unused-disable-directives ."
   },
   "devDependencies": {
-    "@ornikar/eslint-config": "18.8.0",
+    "@ornikar/eslint-config": "18.11.0",
     "@ornikar/prettier-config": "4.0.5",
     "@ornikar/repo-config": "8.3.2",
     "@yarnpkg/parsers": "2.5.0",
