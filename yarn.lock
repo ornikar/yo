@@ -748,9 +748,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ornikar/lerna-config@npm:6.3.5":
-  version: 6.3.5
-  resolution: "@ornikar/lerna-config@npm:6.3.5"
+"@ornikar/lerna-config@npm:6.3.6":
+  version: 6.3.6
+  resolution: "@ornikar/lerna-config@npm:6.3.6"
   dependencies:
     "@pob/pretty-eslint-config": ^1.0.1
   peerDependencies:
@@ -758,7 +758,7 @@ __metadata:
   bin:
     lerna-config-generate-eslintrc-files: bin/generate-eslintrc-files.js
     lerna-config-generate-tsconfig-files: bin/generate-tsconfig-files.js
-  checksum: 0efdd3cc765d4dd4b6bdbce181e65f89a6003eeca769fc0ee241b812fa38670110f50b61fc569f5bf30c8fd7e4625cd52f22daa69f401841ebff5bcc8d947746
+  checksum: 2289bfe50ace617c7f329c02283c8f41e2368c8eb30c01fbd41ec3abb5a927366c576096d071e01530f8a927e6365d48c69b966fe941843ddfdde64f86c4f7da
   languageName: node
   linkType: hard
 
@@ -800,7 +800,7 @@ __metadata:
     "@lerna/package-graph": 4.0.0
     "@lerna/project": 4.0.0
     "@ornikar/eslint-config": 18.12.0
-    "@ornikar/lerna-config": 6.3.5
+    "@ornikar/lerna-config": 6.3.6
     "@ornikar/prettier-config": 4.0.6
     "@ornikar/repo-config": 8.4.0
     "@yarnpkg/parsers": 2.5.0
