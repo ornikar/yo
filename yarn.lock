@@ -762,23 +762,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ornikar/prettier-config@npm:4.0.6":
-  version: 4.0.6
-  resolution: "@ornikar/prettier-config@npm:4.0.6"
+"@ornikar/prettier-config@npm:4.0.7":
+  version: 4.0.7
+  resolution: "@ornikar/prettier-config@npm:4.0.7"
   peerDependencies:
     prettier: ^2.0.4
-  checksum: 57eae107823bd499a8421b97a11b7715789bd39bf0ce76a944fdf5cebd2040b726b69237c5cda7c3495b49555cb3c762e8f8895c980e752d4a46b3a9db046671
+  checksum: f4410a5bab9569ddb329510c966c9ac0f9c4e96bf5ef968cc7de14c348e6e5908d146d38a3c9356046a1db57f09e107f56e8c9220b132568e569caee0edb5add
   languageName: node
   linkType: hard
 
-"@ornikar/repo-config@npm:8.5.0":
-  version: 8.5.0
-  resolution: "@ornikar/repo-config@npm:8.5.0"
+"@ornikar/repo-config@npm:8.5.1":
+  version: 8.5.1
+  resolution: "@ornikar/repo-config@npm:8.5.1"
   dependencies:
     "@commitlint/cli": 16.3.0
     "@ornikar/commitlint-config": ^4.0.4
     husky: 8.0.1
-    lint-staged: 13.0.2
+    lint-staged: 13.0.3
     prettier-plugin-properties: 0.1.0
     semver: ^7.3.5
     which-pm-runs: ^1.1.0
@@ -789,7 +789,7 @@ __metadata:
     ornikar-prettier-check: bin/ornikar-prettier-check.sh
     ornikar-prettier-fix: bin/ornikar-prettier-fix.sh
     ornikar-repo-config-postinstall: bin/ornikar-repo-config-postinstall.js
-  checksum: 8e844a81d8c06548ed6b792492f644f19ad3c7bc51fb990b5fb852a4787d031e6b88fe8246bcedbdf0e450524f26fc3511457343f194d8c4e07e304093bab8a2
+  checksum: 79b01d402d5e8e0ab37a3b40b6554ba04f0b591fc599d368e9aaa506fb68c964f02eb6770a3f4ff26832b213c0da50f958a6c17e76682448f708fb2bb31145c7
   languageName: node
   linkType: hard
 
@@ -801,8 +801,8 @@ __metadata:
     "@lerna/project": 4.0.0
     "@ornikar/eslint-config": 18.12.0
     "@ornikar/lerna-config": 6.3.6
-    "@ornikar/prettier-config": 4.0.6
-    "@ornikar/repo-config": 8.5.0
+    "@ornikar/prettier-config": 4.0.7
+    "@ornikar/repo-config": 8.5.1
     "@yarnpkg/parsers": 2.5.0
     check-package-dependencies: 3.5.2
     emoji-regex: 10.1.0
@@ -3924,9 +3924,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:13.0.2":
-  version: 13.0.2
-  resolution: "lint-staged@npm:13.0.2"
+"lint-staged@npm:13.0.3":
+  version: 13.0.3
+  resolution: "lint-staged@npm:13.0.3"
   dependencies:
     cli-truncate: ^3.1.0
     colorette: ^2.0.17
@@ -3943,7 +3943,7 @@ __metadata:
     yaml: ^2.1.1
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: b5ccf8e11b69f6fd8b79b629580c1463524aeca069a8f97a28291de2fafa474c28871428b56f251cf95a02d84e7b0fc0dfd6443532e16fdac3f9cba9228cfc9e
+  checksum: 53d585007df06e162febab6b0836b55016d902586a267823c8a1158529d8c742dc7297e523f7023dff02250bef3eb0d6934f4ec4f9961adfc2ebbed5f54162d0
   languageName: node
   linkType: hard
 
