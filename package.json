@@ -16,8 +16,8 @@
       "@ornikar/commitlint-config"
     ]
   },
-  "scripts": {,
-    "install-bin": "ln -s $PWD/bin/index.js /usr/local/bin/yornikar"
+  "scripts": {
+    "install-bin": "ln -s $PWD/bin/index.js /usr/local/bin/yornikar",
     "postinstall": "ornikar-repo-config-postinstall",
     "lint:prettier": "prettier --check .",
     "lint:eslint": "eslint --quiet --report-unused-disable-directives ."
