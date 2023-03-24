@@ -5,6 +5,7 @@ Yeoman generators for easier upgrades of repositories. Currently works for front
 ## How to install
 
 - `git clone [url]`
+- `yarn`
 - `sudo yarn install-bin`
 
 ## How to use
