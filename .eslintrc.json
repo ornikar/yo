@@ -2,6 +2,7 @@
   "root": true,
   "extends": ["@ornikar/eslint-config/root"],
   "rules": {
-    "filenames/match-exported": "off"
+    "filenames/match-exported": "off",
+    "no-param-reassign": "off"
   }
 }
