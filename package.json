@@ -7,7 +7,8 @@
     "node": ">= 16.10.0"
   },
   "bin": {
-    "yornikar": "./bin/index.js"
+    "yornikar": "./bin/index.js",
+    "yornikar-migrate": "./bin/migrate.js"
   },
   "license": "MIT",
   "prettier": "@ornikar/prettier-config",
@@ -17,7 +18,7 @@
     ]
   },
   "scripts": {
-    "install-bin": "ln -s $PWD/bin/index.js /usr/local/bin/yornikar",
+    "install-bin": "ln -s $PWD/bin/index.js /usr/local/bin/yornikar && ln -s $PWD/bin/migrate.js /usr/local/bin/yornikar-migrate",
     "postinstall": "ornikar-repo-config-postinstall",
     "lint:prettier": "prettier --check .",
     "lint:eslint": "eslint --quiet --report-unused-disable-directives ."
@@ -35,10 +36,13 @@
     "@lerna/project": "4.0.0",
     "@ornikar/lerna-config": "6.4.1",
     "emoji-regex": "10.1.0",
+    "glob": "10.3.4",
+    "jscodeshift": "0.15.0",
     "json5": "2.2.2",
     "mem-fs": "2.2.1",
     "mem-fs-editor": "9.4.0",
     "prettier": "2.8.8",
+    "react-codemod": "5.4.3",
     "yeoman-environment": "3.9.1",
     "yeoman-generator": "5.6.1"
   }

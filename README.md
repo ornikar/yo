@@ -16,6 +16,12 @@ In the repository, run:
 yornikar
 ```
 
+or:
+
+```
+yornikar-migrate
+```
+
 ## What's included
 
 - vscode generator: generate `.vscode/settings.json` and `.vscode/extensions.json`.

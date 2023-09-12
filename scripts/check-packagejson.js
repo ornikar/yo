@@ -7,5 +7,11 @@ createCheckPackage().checkRecommended({
     '@ornikar/lerna-config': {
       missingPeerDependency: ['lerna'],
     },
+    'react-codemod': {
+      duplicateDirectDependency: ['jscodeshift', 'eslint'],
+    },
+    'check-package-dependencies': {
+      duplicateDirectDependency: ['glob'],
+    },
   },
 });
