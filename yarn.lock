@@ -1335,7 +1335,7 @@ __metadata:
     "@ornikar/lerna-config": 6.4.1
     "@ornikar/prettier-config": 4.0.7
     "@ornikar/repo-config": 8.6.0
-    "@yarnpkg/parsers": 2.5.0
+    "@yarnpkg/parsers": 2.5.1
     check-package-dependencies: 3.5.2
     emoji-regex: 10.1.0
     eslint: 8.39.0
@@ -1584,13 +1584,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/parsers@npm:2.5.0":
-  version: 2.5.0
-  resolution: "@yarnpkg/parsers@npm:2.5.0"
+"@yarnpkg/parsers@npm:2.5.1":
+  version: 2.5.1
+  resolution: "@yarnpkg/parsers@npm:2.5.1"
   dependencies:
     js-yaml: ^3.10.0
     tslib: ^1.13.0
-  checksum: 02678b7b910eb653c27f0043ac5295c96f2547164959a76e529cad628c2dd48748d1eec2e5d0ee77f79c7d0536549477f203274ca0533e1b478a7f1e0689bb75
+  checksum: 42f98b8bd635add304ce392c6f600b46e40c2c4429d7b6c38b70f50b5fd6a854dd2369e0987b70546a3c8f690d280f040a885b35acfde891f5e173fc3f974277
   languageName: node
   linkType: hard
 
