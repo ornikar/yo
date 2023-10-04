@@ -22,7 +22,7 @@ jobs:
         run: yarn install --immutable
 
       - name: Check package.json
-        run: node scripts/check-packagejson.js
+        run: node scripts/check-packagejson.mjs
 
       - name: Prettier
         run: yarn run lint:prettier
