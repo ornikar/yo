@@ -35,7 +35,7 @@
     "@lerna/package-graph": "4.0.0",
     "@lerna/project": "4.0.0",
     "@ornikar/lerna-config": "6.4.1",
-    "emoji-regex": "10.1.0",
+    "emoji-regex": "10.2.1",
     "glob": "10.3.4",
     "jscodeshift": "0.15.0",
     "json5": "2.2.2",
