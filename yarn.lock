@@ -1275,7 +1275,7 @@ __metadata:
     check-package-dependencies: 6.8.0
     emoji-regex: 10.2.1
     eslint: 8.39.0
-    glob: 10.3.4
+    glob: 10.3.10
     jscodeshift: 0.15.0
     json5: 2.2.3
     mem-fs: 2.2.1
@@ -4171,22 +4171,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:10.3.4":
-  version: 10.3.4
-  resolution: "glob@npm:10.3.4"
-  dependencies:
-    foreground-child: ^3.1.0
-    jackspeak: ^2.0.3
-    minimatch: ^9.0.1
-    minipass: ^5.0.0 || ^6.0.2 || ^7.0.0
-    path-scurry: ^1.10.1
-  bin:
-    glob: dist/cjs/src/bin.js
-  checksum: 176b97c124414401cb51329a93d2ba112cef8814adbed10348481916b9521b677773eee2691cb6b24d66632d8c8bb8913533f5ac4bfb2d0ef5454a1856082361
-  languageName: node
-  linkType: hard
-
-"glob@npm:^10.0.0":
+"glob@npm:10.3.10, glob@npm:^10.0.0":
   version: 10.3.10
   resolution: "glob@npm:10.3.10"
   dependencies:
@@ -5184,7 +5169,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jackspeak@npm:^2.0.3, jackspeak@npm:^2.3.5":
+"jackspeak@npm:^2.3.5":
   version: 2.3.6
   resolution: "jackspeak@npm:2.3.6"
   dependencies:
