@@ -11,9 +11,9 @@ env.registerStub(ornikarGenerator, 'ornikar:generator');
 
 const options = {};
 
-env.run('ornikar:generator', options).catch((err) => {
-  if (err) {
-    console.error(err.stack || err.message || err);
+env.run('ornikar:generator', options).catch((error) => {
+  if (error) {
+    console.error(error.stack || error.message || error);
     process.exit(1);
   }
 });
