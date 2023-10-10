@@ -29,7 +29,7 @@
     "@ornikar/repo-config": "8.6.0",
     "@yarnpkg/parsers": "2.5.1",
     "check-package-dependencies": "6.8.0",
-    "eslint": "8.50.0"
+    "eslint": "8.51.0"
   },
   "dependencies": {
     "@ornikar/lerna-config": "6.4.1",
