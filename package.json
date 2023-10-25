@@ -25,14 +25,14 @@
   },
   "devDependencies": {
     "@ornikar/eslint-config": "21.1.0",
-    "@ornikar/prettier-config": "4.0.7",
-    "@ornikar/repo-config": "8.6.0",
+    "@ornikar/prettier-config": "7.0.0",
+    "@ornikar/repo-config": "13.0.0",
     "@yarnpkg/parsers": "2.5.1",
     "check-package-dependencies": "6.8.0",
     "eslint": "8.52.0"
   },
   "dependencies": {
-    "@ornikar/lerna-config": "6.4.1",
+    "@ornikar/monorepo-config": "12.0.1",
     "emoji-regex": "10.2.1",
     "glob": "10.3.10",
     "jscodeshift": "0.15.0",
