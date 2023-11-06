@@ -2,7 +2,7 @@
   "name": "@ornikar/yo",
   "version": "0.0.1",
   "type": "commonjs",
-  "packageManager": "yarn@3.6.4",
+  "packageManager": "yarn@4.0.1",
   "engines": {
     "node": ">= 16.10.0"
   },
