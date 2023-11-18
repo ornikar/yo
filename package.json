@@ -4,7 +4,7 @@
   "type": "commonjs",
   "packageManager": "yarn@4.0.1",
   "engines": {
-    "node": ">= 16.10.0"
+    "node": ">=18.18.0"
   },
   "bin": {
     "yornikar": "./bin/index.js",
@@ -19,9 +19,11 @@
   },
   "scripts": {
     "install-bin": "ln -s $PWD/bin/index.js /usr/local/bin/yornikar && ln -s $PWD/bin/migrate.js /usr/local/bin/yornikar-migrate",
-    "postinstall": "ornikar-repo-config-postinstall",
-    "lint:prettier": "prettier --check .",
-    "lint:eslint": "eslint --quiet --report-unused-disable-directives ."
+    "lint:eslint": "eslint --quiet --report-unused-disable-directives .",
+    "lint:eslint:fix": "yarn lint:eslint --fix",
+    "lint:prettier": "prettier --no-error-on-unmatched-pattern --check . '**/.env*' '**/*.env'",
+    "lint:prettier:fix": "prettier --no-error-on-unmatched-pattern --write . '**/.env*' '**/*.env'",
+    "postinstall": "ornikar-repo-config-postinstall"
   },
   "devDependencies": {
     "@ornikar/eslint-config": "21.3.0",
