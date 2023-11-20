@@ -12,15 +12,8 @@ Yeoman generators for easier upgrades of repositories. Currently works for front
 
 In the repository, run:
 
-```
-yornikar
-```
-
-or:
-
-```
-yornikar-migrate
-```
+- To update using yeoman generators: `yornikar`
+- To use codemod upgrades, `yornikar-migrate`
 
 ## What's included
 
