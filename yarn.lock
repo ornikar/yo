@@ -1764,13 +1764,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ornikar/commitlint-config@npm:6.0.0":
-  version: 6.0.0
-  resolution: "@ornikar/commitlint-config@npm:6.0.0"
+"@ornikar/commitlint-config@npm:6.0.1":
+  version: 6.0.1
+  resolution: "@ornikar/commitlint-config@npm:6.0.1"
   dependencies:
     "@commitlint/config-conventional": "npm:^17.0.3"
     "@commitlint/config-lerna-scopes": "npm:^17.0.2"
-  checksum: 7e686f9937b420df9a2b0d478d5ca0b8d8fbdc8a9d23821f9cd0a6e8ecdf5caddffcd101dde372117bc8ae79f7475b8952dc5b604c46e1f3564d8f9855c84757
+  checksum: cd437594377fe8311b5b36d49b1fd8cb131a625d1dfbb1a72f591685dce9c797b144cc6ac3c5648cf2663caf3811d82b0c9bb88776dd5116cb22b06e24b7b67e
   languageName: node
   linkType: hard
 
@@ -1843,12 +1843,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ornikar/repo-config@npm:13.2.0":
-  version: 13.2.0
-  resolution: "@ornikar/repo-config@npm:13.2.0"
+"@ornikar/repo-config@npm:13.2.1":
+  version: 13.2.1
+  resolution: "@ornikar/repo-config@npm:13.2.1"
   dependencies:
     "@commitlint/cli": "npm:17.8.1"
-    "@ornikar/commitlint-config": "npm:6.0.0"
+    "@ornikar/commitlint-config": "npm:6.0.1"
     husky: "npm:8.0.3"
     lint-staged: "npm:15.1.0"
     prettier-plugin-properties: "npm:0.3.0"
@@ -1862,7 +1862,7 @@ __metadata:
     ornikar-prettier-check: ./bin/ornikar-prettier-check.sh
     ornikar-prettier-fix: ./bin/ornikar-prettier-fix.sh
     ornikar-repo-config-postinstall: ./bin/ornikar-repo-config-postinstall.js
-  checksum: e789015edd7856c6d753687a6ef866f009be1fcf9959a195ee3b564d2cc54f6f5808bd9bf541d6d035a79cc1b14618d85415fbe19a3b0aa66b2d137dd12be887
+  checksum: 0d2afd52c4d1edfb98494c3c58cf03cc4bc54c4754a77789732da05fc399a2c3f8003d81349d02d0f0e473d0750eb9fd281f88b05b95e0457b4299167e1c0f8b
   languageName: node
   linkType: hard
 
@@ -1873,7 +1873,7 @@ __metadata:
     "@ornikar/eslint-config": "npm:21.3.0"
     "@ornikar/monorepo-config": "npm:12.1.0"
     "@ornikar/prettier-config": "npm:7.0.0"
-    "@ornikar/repo-config": "npm:13.2.0"
+    "@ornikar/repo-config": "npm:13.2.1"
     "@yarnpkg/parsers": "npm:2.5.1"
     check-package-dependencies: "npm:6.8.0"
     emoji-regex: "npm:10.2.1"
