@@ -31,7 +31,7 @@
     "@ornikar/repo-config": "13.2.1",
     "@yarnpkg/parsers": "2.5.1",
     "check-package-dependencies": "6.8.0",
-    "eslint": "8.53.0"
+    "eslint": "8.55.0"
   },
   "dependencies": {
     "@ornikar/monorepo-config": "12.1.0",
