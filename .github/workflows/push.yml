@@ -29,14 +29,14 @@ jobs:
 
       - name: Prettier
         run: yarn run lint:prettier
-        if: startsWith(matrix.node-version, '18.')
+        if: startsWith(matrix.node-version, '20.')
 
       - name: Eslint
         run: yarn run lint:eslint
-        if: startsWith(matrix.node-version, '18.')
+        if: startsWith(matrix.node-version, '20.')
 
       - name: Check working directory is clean
-        if: startsWith(matrix.node-version, '18.')
+        if: startsWith(matrix.node-version, '20.')
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             echo "Working directory not clean:"
