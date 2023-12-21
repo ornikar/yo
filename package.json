@@ -4,7 +4,7 @@
   "type": "commonjs",
   "packageManager": "yarn@4.0.1",
   "engines": {
-    "node": ">=18.18.0"
+    "node": ">=20.10.0"
   },
   "bin": {
     "yornikar": "./bin/index.js",
@@ -27,14 +27,14 @@
   },
   "devDependencies": {
     "@ornikar/eslint-config": "21.3.0",
-    "@ornikar/prettier-config": "7.0.0",
-    "@ornikar/repo-config": "13.2.1",
+    "@ornikar/prettier-config": "8.0.0",
+    "@ornikar/repo-config": "14.0.0",
     "@yarnpkg/parsers": "2.5.1",
     "check-package-dependencies": "6.8.0",
     "eslint": "8.56.0"
   },
   "dependencies": {
-    "@ornikar/monorepo-config": "12.1.0",
+    "@ornikar/monorepo-config": "13.0.0",
     "emoji-regex": "10.2.1",
     "glob": "10.3.10",
     "jscodeshift": "0.15.0",
