@@ -1843,14 +1843,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ornikar/repo-config@npm:14.0.0":
-  version: 14.0.0
-  resolution: "@ornikar/repo-config@npm:14.0.0"
+"@ornikar/repo-config@npm:14.0.1":
+  version: 14.0.1
+  resolution: "@ornikar/repo-config@npm:14.0.1"
   dependencies:
     "@commitlint/cli": "npm:17.8.1"
     "@ornikar/commitlint-config": "npm:7.0.0"
     husky: "npm:8.0.3"
-    lint-staged: "npm:15.2.0"
+    lint-staged: "npm:15.2.2"
     prettier-plugin-properties: "npm:0.3.0"
     semver: "npm:^7.3.5"
     which-pm-runs: "npm:^1.1.0"
@@ -1862,7 +1862,7 @@ __metadata:
     ornikar-prettier-check: ./bin/ornikar-prettier-check.sh
     ornikar-prettier-fix: ./bin/ornikar-prettier-fix.sh
     ornikar-repo-config-postinstall: ./bin/ornikar-repo-config-postinstall.js
-  checksum: 8bd4273a5d88027c4971ade1ec334d2de031d138c69fc450a8f851c5e9b08578af17a8e1b30a22ddd80be14e2669ce653fb3d432d570f9a15c5b353296a1c47e
+  checksum: a7cd1e9e5fe3f2cd79c1afb1523833611419c2171eb9716fb7bbf6b64309b3ea46905faf537fbb77efcd7f20da23d7bb3f1b42e29a1fb01632102f75a90c28b1
   languageName: node
   linkType: hard
 
@@ -1873,7 +1873,7 @@ __metadata:
     "@ornikar/eslint-config": "npm:21.3.0"
     "@ornikar/monorepo-config": "npm:13.0.0"
     "@ornikar/prettier-config": "npm:8.0.0"
-    "@ornikar/repo-config": "npm:14.0.0"
+    "@ornikar/repo-config": "npm:14.0.1"
     "@yarnpkg/parsers": "npm:2.5.1"
     check-package-dependencies: "npm:6.8.0"
     emoji-regex: "npm:10.2.1"
@@ -6855,29 +6855,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:15.2.0":
-  version: 15.2.0
-  resolution: "lint-staged@npm:15.2.0"
+"lint-staged@npm:15.2.2":
+  version: 15.2.2
+  resolution: "lint-staged@npm:15.2.2"
   dependencies:
     chalk: "npm:5.3.0"
     commander: "npm:11.1.0"
     debug: "npm:4.3.4"
     execa: "npm:8.0.1"
     lilconfig: "npm:3.0.0"
-    listr2: "npm:8.0.0"
+    listr2: "npm:8.0.1"
     micromatch: "npm:4.0.5"
     pidtree: "npm:0.6.0"
     string-argv: "npm:0.3.2"
     yaml: "npm:2.3.4"
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 2a20e9b15f7e7419e92a2014afb01feb58798341a4a56aa1b9c8570297681cf54919f645df3c221e4348fd262df38c1e711a245a645d477bf870841e27c604f2
+  checksum: 5855ae7abf3ffdc2d66e8ad20759915e76544e7c4bcdfef78c82b5c126502284320d9fb0ecde554a6d07747311ab751d0bccbe3468aa5d5a7661774317cd7437
   languageName: node
   linkType: hard
 
-"listr2@npm:8.0.0":
-  version: 8.0.0
-  resolution: "listr2@npm:8.0.0"
+"listr2@npm:8.0.1":
+  version: 8.0.1
+  resolution: "listr2@npm:8.0.1"
   dependencies:
     cli-truncate: "npm:^4.0.0"
     colorette: "npm:^2.0.20"
@@ -6885,7 +6885,7 @@ __metadata:
     log-update: "npm:^6.0.0"
     rfdc: "npm:^1.3.0"
     wrap-ansi: "npm:^9.0.0"
-  checksum: d5a53b6d5feaa3a45c3750ebf10d242d42f11741b890edf8de7d68a002c36f15d0683f25742a0eb055763f04c005210a5cd61ef6c24ebac099d597cb21b06f29
+  checksum: 3fa83e8b709306b7efab69884ac1af08de3e18449bccf0b4d81f78dc7235dc921a32a5875b1e7deea0650f0faef2bca2d8992f16377d858158eb5a57bbb0d025
   languageName: node
   linkType: hard
 
