@@ -1764,13 +1764,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ornikar/commitlint-config@npm:7.0.0":
-  version: 7.0.0
-  resolution: "@ornikar/commitlint-config@npm:7.0.0"
+"@ornikar/commitlint-config@npm:7.0.1-canary.aefa0f0544617a3e0c6c97fbc2d12383dce11cf6.0":
+  version: 7.0.1-canary.aefa0f0544617a3e0c6c97fbc2d12383dce11cf6.0
+  resolution: "@ornikar/commitlint-config@npm:7.0.1-canary.aefa0f0544617a3e0c6c97fbc2d12383dce11cf6.0"
   dependencies:
     "@commitlint/config-conventional": "npm:^17.0.3"
     "@commitlint/config-lerna-scopes": "npm:^17.0.2"
-  checksum: 6f4446aa1552916b5c9309921dd8911d7d86f6da18fa563ed87985ed442803ee13866ed278ed91ef9156bedd9721e3be329f82796412bb3a8ce8f503f26ad5af
+  checksum: f9f7ecc8c36d94ffb30979fb056178e7568f0586531c91ad692873b52d4596d7d7c81dac9f61529a70e6c1d52e50c9c5210463afe548115cd54c7e4ee5a865c4
   languageName: node
   linkType: hard
 
@@ -1834,21 +1834,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ornikar/prettier-config@npm:8.0.0":
-  version: 8.0.0
-  resolution: "@ornikar/prettier-config@npm:8.0.0"
+"@ornikar/prettier-config@npm:8.0.1-canary.aefa0f0544617a3e0c6c97fbc2d12383dce11cf6.0":
+  version: 8.0.1-canary.aefa0f0544617a3e0c6c97fbc2d12383dce11cf6.0
+  resolution: "@ornikar/prettier-config@npm:8.0.1-canary.aefa0f0544617a3e0c6c97fbc2d12383dce11cf6.0"
   peerDependencies:
     prettier: ^2.0.4
-  checksum: 5b060be9ec217bc98d77acab61982fce623ea22342804cea18c2dcd366843c47cf10741f69d5a1d3b844106f046841cb0f001b17867249cacd6a3df410b1b034
+  checksum: 20879ab92b8553ca7a563adbc53c81cd5375d429668cc2c2a5f6d7bc6cd99375a0cf7ce7d32c15299a8ab3f536a8a24e2e169979d92e877af04790f060588693
   languageName: node
   linkType: hard
 
-"@ornikar/repo-config@npm:14.0.2":
-  version: 14.0.2
-  resolution: "@ornikar/repo-config@npm:14.0.2"
+"@ornikar/repo-config@npm:14.1.2-canary.aefa0f0544617a3e0c6c97fbc2d12383dce11cf6.0":
+  version: 14.1.2-canary.aefa0f0544617a3e0c6c97fbc2d12383dce11cf6.0
+  resolution: "@ornikar/repo-config@npm:14.1.2-canary.aefa0f0544617a3e0c6c97fbc2d12383dce11cf6.0"
   dependencies:
     "@commitlint/cli": "npm:17.8.1"
-    "@ornikar/commitlint-config": "npm:7.0.0"
+    "@ornikar/commitlint-config": "npm:7.0.1-canary.aefa0f0544617a3e0c6c97fbc2d12383dce11cf6.0"
     husky: "npm:8.0.3"
     lint-staged: "npm:15.2.10"
     prettier-plugin-properties: "npm:0.3.0"
@@ -1862,7 +1862,7 @@ __metadata:
     ornikar-prettier-check: ./bin/ornikar-prettier-check.sh
     ornikar-prettier-fix: ./bin/ornikar-prettier-fix.sh
     ornikar-repo-config-postinstall: ./bin/ornikar-repo-config-postinstall.js
-  checksum: 7254e0ad5fb46c472c31c58938efe6fe88b699618a5349b7c08a7e7fa705979b0eea6259f67c15ae0a8d248b5ec8c7ea3d26b5b132b9c62f5435a72e2b66c102
+  checksum: 9980b2194aec71bc4944ffb42c52fd6f5a831b55ee6fdc4096365b80913f2d811ed333963930d5d54c7985dfc2673c200c4cff78a882343461c859ad4aa0dc4c
   languageName: node
   linkType: hard
 
@@ -1872,8 +1872,8 @@ __metadata:
   dependencies:
     "@ornikar/eslint-config": "npm:21.3.0"
     "@ornikar/monorepo-config": "npm:13.0.0"
-    "@ornikar/prettier-config": "npm:8.0.0"
-    "@ornikar/repo-config": "npm:14.0.2"
+    "@ornikar/prettier-config": "npm:8.0.1-canary.aefa0f0544617a3e0c6c97fbc2d12383dce11cf6.0"
+    "@ornikar/repo-config": "npm:14.1.2-canary.aefa0f0544617a3e0c6c97fbc2d12383dce11cf6.0"
     "@yarnpkg/parsers": "npm:2.5.1"
     check-package-dependencies: "npm:6.8.0"
     emoji-regex: "npm:10.2.1"

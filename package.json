@@ -4,7 +4,7 @@
   "type": "commonjs",
   "packageManager": "yarn@4.0.1",
   "engines": {
-    "node": ">=20.10.0"
+    "node": ">=22.17.0"
   },
   "bin": {
     "yornikar": "./bin/index.js",
@@ -27,8 +27,8 @@
   },
   "devDependencies": {
     "@ornikar/eslint-config": "21.3.0",
-    "@ornikar/prettier-config": "8.0.0",
-    "@ornikar/repo-config": "14.0.2",
+    "@ornikar/prettier-config": "8.0.1-canary.aefa0f0544617a3e0c6c97fbc2d12383dce11cf6.0",
+    "@ornikar/repo-config": "14.1.2-canary.aefa0f0544617a3e0c6c97fbc2d12383dce11cf6.0",
     "@yarnpkg/parsers": "2.5.1",
     "check-package-dependencies": "6.8.0",
     "eslint": "8.57.1"
