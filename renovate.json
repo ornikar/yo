@@ -1,5 +1,5 @@
 {
-  "extends": ["config:js-lib", "github>ornikar/renovate-presets:frontend-legacy"],
+  "extends": ["config:js-lib", "github>ornikar/renovate-presets:frontend"],
   "packageRules": [
     {
       "matchPackageNames": ["lint-staged", "yarn-deduplicate"],
