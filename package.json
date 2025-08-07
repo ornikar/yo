@@ -26,7 +26,7 @@
     "postinstall": "ornikar-repo-config-postinstall"
   },
   "devDependencies": {
-    "@ornikar/eslint-config": "21.3.0",
+    "@ornikar/eslint-config": "22.3.0",
     "@ornikar/prettier-config": "9.0.0",
     "@ornikar/repo-config": "15.0.0",
     "@yarnpkg/parsers": "2.5.1",
