@@ -36,7 +36,7 @@
   "dependencies": {
     "@ornikar/monorepo-config": "13.0.0",
     "emoji-regex": "10.2.1",
-    "glob": "10.3.10",
+    "glob": "10.5.0",
     "jscodeshift": "0.15.0",
     "json5": "2.2.3",
     "mem-fs": "2.2.1",
