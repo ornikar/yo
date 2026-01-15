@@ -1834,12 +1834,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ornikar/prettier-config@npm:9.0.0":
-  version: 9.0.0
-  resolution: "@ornikar/prettier-config@npm:9.0.0"
+"@ornikar/prettier-config@npm:9.0.1":
+  version: 9.0.1
+  resolution: "@ornikar/prettier-config@npm:9.0.1"
   peerDependencies:
     prettier: ^2.0.4
-  checksum: 789ebcf3499198ccbbf7ebdbd36022085adef579364ba2fde8c59897f92c980e0ea66215fd617b93637df82fe8fde9e56b19acf612851ff5b5c1ce3c5ffcb705
+  checksum: 2a3dceaacf8363e71ad0ff043dcecc3daf1f80a69b60e3ff85fd2aad7a3d55d20f6ae55105ae6ebb4d29a105f115d6217545ee8c1e1bc3b7fcc83107e794e8aa
   languageName: node
   linkType: hard
 
@@ -1872,7 +1872,7 @@ __metadata:
   dependencies:
     "@ornikar/eslint-config": "npm:21.3.0"
     "@ornikar/monorepo-config": "npm:13.0.0"
-    "@ornikar/prettier-config": "npm:9.0.0"
+    "@ornikar/prettier-config": "npm:9.0.1"
     "@ornikar/repo-config": "npm:15.1.1"
     "@yarnpkg/parsers": "npm:2.5.1"
     check-package-dependencies: "npm:6.8.0"
