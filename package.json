@@ -7,6 +7,7 @@
     "node": ">=22.22.0"
   },
   "bin": {
+    "run-codemods": "./bin/run-codemods.js",
     "yornikar": "./bin/index.js",
     "yornikar-migrate": "./bin/migrate.js"
   },
