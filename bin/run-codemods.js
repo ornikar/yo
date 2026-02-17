@@ -57,51 +57,56 @@ const filesToTransform = fs.statSync(targetPath).isDirectory() ? getAllFiles(tar
 const updatedFiles = new Set();
 
 // Execute each codemod
-for (const transformFile of codemodFiles) {
-  const transformPath = path.join(codemodsDir, transformFile);
-  const codemod = require(transformPath);
-  console.log(`➡️  Running codemod: ${transformFile}`);
+(async () => {
+  for (const transformFile of codemodFiles) {
+    const transformPath = path.join(codemodsDir, transformFile);
+    const codemod = require(transformPath);
+    console.log(`➡️  Running codemod: ${transformFile}`);
 
-  for (const filePath of filesToTransform) {
-    const source = fs.readFileSync(filePath, 'utf8');
+    // eslint-disable-next-line no-await-in-loop
+    await Promise.all(
+      filesToTransform.map(async (filePath) => {
+        const source = fs.readFileSync(filePath, 'utf8');
 
-    try {
-      codemod(
-        { path: filePath, source },
-        { jscodeshift: jscodeshift.withParser('tsx') },
-        { printOptions: { quote: 'single', trailingComma: true } },
-      ).then((transformed) => {
-        if (typeof transformed === 'string' && transformed !== source) {
-          if (isDryRun) {
-            console.log(`🔍 ${filePath}`);
-            const diff = diffLines(source, transformed);
-            diff.forEach((part) => {
-              const color = part.added ? '\u001B[32m' : part.removed ? '\u001B[31m' : '\u001B[0m';
-              const prefix = part.added ? '+' : part.removed ? '-' : ' ';
-              const lines = part.value.split('\n').map((line) => `${prefix} ${line}`);
-              process.stdout.write(`${color}${lines.join('\n')}\u001B[0m\n`);
-            });
-          } else {
-            fs.writeFileSync(filePath, transformed, 'utf8');
-            console.log(`✅ Updated: ${filePath}`);
+        try {
+          const transformed = await codemod(
+            { path: filePath, source },
+            { jscodeshift: jscodeshift.withParser('tsx') },
+            { printOptions: { quote: 'single', trailingComma: true } },
+          );
+
+          if (typeof transformed === 'string' && transformed !== source) {
+            if (isDryRun) {
+              console.log(`🔍 ${filePath}`);
+              const diff = diffLines(source, transformed);
+              diff.forEach((part) => {
+                const color = part.added ? '\u001B[32m' : part.removed ? '\u001B[31m' : '\u001B[0m';
+                const prefix = part.added ? '+' : part.removed ? '-' : ' ';
+                const lines = part.value.split('\n').map((line) => `${prefix} ${line}`);
+                process.stdout.write(`${color}${lines.join('\n')}\u001B[0m\n`);
+              });
+            } else {
+              fs.writeFileSync(filePath, transformed, 'utf8');
+              console.log(`✅ Updated: ${filePath}`);
+            }
+
+            updatedFiles.add(filePath);
           }
-
-          updatedFiles.add(filePath);
+        } catch (error) {
+          if (error.message.includes('TSSatisfiesExpression')) {
+            console.warn(`⚠️ Skipping unsupported file (satisfies): ${filePath}`);
+          } else {
+            throw new Error(`❌ Error transforming ${filePath}: ${error.message}`);
+          }
         }
-      });
-    } catch (error) {
-      if (error.message.includes('TSSatisfiesExpression')) {
-        console.warn(`⚠️ Skipping unsupported file (satisfies): ${filePath}`);
-      } else {
-        throw new Error(`❌ Error transforming ${filePath}: ${error.message}`);
-      }
-    }
+      }),
+    );
   }
-}
 
-if (isDryRun) {
-  console.log(`🚧 Dry run complete. ${updatedFiles.size} file(s) would be modified.`);
-  console.log('Run without --dry to apply changes.');
-} else {
-  console.log(`🏁 All codemods done. ${updatedFiles.size} file(s) modified.`);
-}
+  if (isDryRun) {
+    console.log(`🚧 Dry run complete. ${updatedFiles.size} file(s) would be modified.`);
+    console.log('Run without --dry to apply changes.');
+  } else {
+    console.log(`🏁 All codemods done. ${updatedFiles.size} file(s) modified.`);
+  }
+})();
