@@ -19,7 +19,7 @@
     ]
   },
   "scripts": {
-    "install-bin": "ln -s $PWD/bin/index.js /usr/local/bin/yornikar && ln -s $PWD/bin/migrate.js /usr/local/bin/yornikar-migrate",
+    "install-bin": "node scripts/install-bin.mjs",
     "lint:eslint": "eslint --quiet --report-unused-disable-directives .",
     "lint:eslint:fix": "yarn lint:eslint --fix",
     "lint:prettier": "prettier --no-error-on-unmatched-pattern --check . '**/.env*' '**/*.env'",
