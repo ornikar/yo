@@ -1,6 +1,7 @@
 {
   "root": true,
   "extends": ["@ornikar/eslint-config/root"],
+  "ignorePatterns": ["lib/codemods/**/*.js"],
   "rules": {
     "filenames/match-exported": "off",
     "no-param-reassign": "off"

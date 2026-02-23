@@ -7,6 +7,7 @@
     "node": ">=22.22.0"
   },
   "bin": {
+    "run-codemods": "./bin/run-codemods.js",
     "yornikar": "./bin/index.js",
     "yornikar-migrate": "./bin/migrate.js"
   },
@@ -18,12 +19,13 @@
     ]
   },
   "scripts": {
-    "install-bin": "ln -s $PWD/bin/index.js /usr/local/bin/yornikar && ln -s $PWD/bin/migrate.js /usr/local/bin/yornikar-migrate",
+    "install-bin": "node scripts/install-bin.mjs",
     "lint:eslint": "eslint --quiet --report-unused-disable-directives .",
     "lint:eslint:fix": "yarn lint:eslint --fix",
     "lint:prettier": "prettier --no-error-on-unmatched-pattern --check . '**/.env*' '**/*.env'",
     "lint:prettier:fix": "prettier --no-error-on-unmatched-pattern --write . '**/.env*' '**/*.env'",
-    "postinstall": "ornikar-repo-config-postinstall"
+    "postinstall": "ornikar-repo-config-postinstall",
+    "test": "jest"
   },
   "devDependencies": {
     "@ornikar/eslint-config": "21.3.0",
@@ -31,13 +33,15 @@
     "@ornikar/repo-config": "15.2.1",
     "@yarnpkg/parsers": "2.5.1",
     "check-package-dependencies": "6.8.0",
-    "eslint": "8.57.1"
+    "eslint": "8.57.1",
+    "jest": "30.2.0"
   },
   "dependencies": {
     "@ornikar/monorepo-config": "13.0.0",
+    "diff": "5.0.0",
     "emoji-regex": "10.2.1",
     "glob": "10.3.10",
-    "jscodeshift": "0.15.0",
+    "jscodeshift": "17.3.0",
     "json5": "2.2.3",
     "mem-fs": "2.2.1",
     "mem-fs-editor": "9.4.0",
