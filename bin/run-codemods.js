@@ -10,17 +10,16 @@ const { diffLines } = require('diff');
 const jscodeshift = require('jscodeshift');
 
 const args = process.argv.slice(2);
-const [targetPath] = args;
 
 // Check for --dry argument to enable dry run mode
 const isDryRun = args.includes('--dry');
 
-// Check for --only argument to run a specific codemod
-const onlyArg = args.find((arg) => arg.startsWith('--only='));
-const codemodName = onlyArg ? onlyArg.split('=')[1] : null;
+// Filter out flags to get positional arguments
+const positionalArgs = args.filter((arg) => !arg.startsWith('--'));
+const [targetPath, codemodId] = positionalArgs;
 
 if (!targetPath) {
-  throw new Error('❌ Usage: node scripts/run-codemods.js <targetPath> [--dry] [--only=<codemodName>]');
+  throw new Error('❌ Usage: run-codemods <targetPath> [<lib>/<name>] [--dry]');
 }
 
 if (!fs.existsSync(targetPath)) {
@@ -28,15 +27,44 @@ if (!fs.existsSync(targetPath)) {
 }
 
 const codemodsDir = path.join(__dirname, '../lib/codemods');
-const codemodFiles = fs
-  .readdirSync(codemodsDir)
-  .filter((file) => file.endsWith('.js') && (!codemodName || file === `${codemodName}.js`));
 
-if (codemodFiles.length === 0) {
+// Discover codemods following <lib>/<name>/index.js convention
+function discoverCodemods() {
+  const codemods = [];
+
+  for (const lib of fs.readdirSync(codemodsDir)) {
+    const libDir = path.join(codemodsDir, lib);
+    if (fs.statSync(libDir).isDirectory()) {
+      for (const name of fs.readdirSync(libDir)) {
+        const codemodDir = path.join(libDir, name);
+        const indexPath = path.join(codemodDir, 'index.js');
+        if (fs.statSync(codemodDir).isDirectory() && fs.existsSync(indexPath)) {
+          codemods.push({ id: `${lib}/${name}`, path: indexPath });
+        }
+      }
+    }
+  }
+
+  return codemods;
+}
+
+let codemods = discoverCodemods();
+
+if (codemodId) {
+  codemods = codemods.filter((c) => c.id === codemodId);
+  if (codemods.length === 0) {
+    const available = discoverCodemods()
+      .map((c) => c.id)
+      .join(', ');
+    throw new Error(`❌ Codemod "${codemodId}" not found. Available: ${available}`);
+  }
+}
+
+if (codemods.length === 0) {
   console.log('✅ No codemods to apply.');
 }
 
-console.log(`🛠  Found ${codemodFiles.length} codemod(s) to apply to: ${targetPath}`);
+console.log(`🛠  Found ${codemods.length} codemod(s) to apply to: ${targetPath}`);
 
 // Utility to recursively collect all .ts/.tsx files
 function getAllFiles(dir) {
@@ -58,10 +86,9 @@ const updatedFiles = new Set();
 
 // Execute each codemod
 (async () => {
-  for (const transformFile of codemodFiles) {
-    const transformPath = path.join(codemodsDir, transformFile);
-    const codemod = require(transformPath);
-    console.log(`➡️  Running codemod: ${transformFile}`);
+  for (const codemod of codemods) {
+    const transform = require(codemod.path);
+    console.log(`➡️  Running codemod: ${codemod.id}`);
 
     // eslint-disable-next-line no-await-in-loop
     await Promise.all(
@@ -69,7 +96,7 @@ const updatedFiles = new Set();
         const source = fs.readFileSync(filePath, 'utf8');
 
         try {
-          const transformed = await codemod(
+          const transformed = await transform(
             { path: filePath, source },
             { jscodeshift: jscodeshift.withParser('tsx') },
             { printOptions: { quote: 'single', trailingComma: true } },
