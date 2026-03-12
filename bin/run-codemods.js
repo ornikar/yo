@@ -19,7 +19,7 @@ const positionalArgs = args.filter((arg) => !arg.startsWith('--'));
 const [targetPath, codemodId] = positionalArgs;
 
 if (!targetPath) {
-  throw new Error('❌ Usage: run-codemods <targetPath> [<lib>/<name>] [--dry]');
+  throw new Error('❌ Usage: run-codemods <targetPath> [<lib>/<component>/<action>] [--dry]');
 }
 
 if (!fs.existsSync(targetPath)) {
@@ -28,36 +28,31 @@ if (!fs.existsSync(targetPath)) {
 
 const codemodsDir = path.join(__dirname, '../lib/codemods');
 
-// Discover codemods following <lib>/<name>/index.js convention
-function discoverCodemods() {
-  const codemods = [];
-
-  for (const lib of fs.readdirSync(codemodsDir)) {
-    const libDir = path.join(codemodsDir, lib);
-    if (fs.statSync(libDir).isDirectory()) {
-      for (const name of fs.readdirSync(libDir)) {
-        const codemodDir = path.join(libDir, name);
-        const indexPath = path.join(codemodDir, 'index.js');
-        if (fs.statSync(codemodDir).isDirectory() && fs.existsSync(indexPath)) {
-          codemods.push({ id: `${lib}/${name}`, path: indexPath });
-        }
-      }
-    }
-  }
-
-  return codemods;
+function readDirs(dir) {
+  return fs.readdirSync(dir).filter((entry) => fs.statSync(path.join(dir, entry)).isDirectory());
 }
 
-let codemods = discoverCodemods();
+// Discover codemods following <lib>/<component>/<action>/index.js convention
+function discoverCodemods() {
+  return readDirs(codemodsDir).flatMap((lib) =>
+    readDirs(path.join(codemodsDir, lib)).flatMap((component) =>
+      readDirs(path.join(codemodsDir, lib, component))
+        .map((action) => ({ id: `${lib}/${component}/${action}`, path: path.join(codemodsDir, lib, component, action, 'index.js') }))
+        .filter(({ path: indexPath }) => fs.existsSync(indexPath)),
+    ),
+  );
+}
+
+let codemods;
 
 if (codemodId) {
-  codemods = codemods.filter((c) => c.id === codemodId);
-  if (codemods.length === 0) {
-    const available = discoverCodemods()
-      .map((c) => c.id)
-      .join(', ');
-    throw new Error(`❌ Codemod "${codemodId}" not found. Available: ${available}`);
+  const indexPath = path.join(codemodsDir, codemodId, 'index.js');
+  if (!fs.existsSync(indexPath)) {
+    throw new Error(`❌ Codemod "${codemodId}" not found. Available: ${discoverCodemods().map((c) => c.id).join(', ')}`);
   }
+  codemods = [{ id: codemodId, path: indexPath }];
+} else {
+  codemods = discoverCodemods();
 }
 
 if (codemods.length === 0) {
