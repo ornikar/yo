@@ -96,8 +96,7 @@ async function main() {
   );
 
   if (!fs.existsSync(targetPath)) {
-    console.error(`❌ Le chemin "${targetPath}" n'existe pas.`);
-    process.exit(1);
+    throw new Error(`❌ Le chemin "${targetPath}" n'existe pas.`);
   }
 
   const { selected } = await prompts(
@@ -129,6 +128,5 @@ async function main() {
 }
 
 main().catch((error) => {
-  console.error(error.message);
-  process.exit(1);
+  throw new Error(error.message);
 });
