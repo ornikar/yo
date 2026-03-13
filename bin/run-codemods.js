@@ -7,89 +7,36 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { diffLines } = require('diff');
+const { globSync } = require('glob');
 const jscodeshift = require('jscodeshift');
-
-const args = process.argv.slice(2);
-
-// Check for --dry argument to enable dry run mode
-const isDryRun = args.includes('--dry');
-
-// Filter out flags to get positional arguments
-const positionalArgs = args.filter((arg) => !arg.startsWith('--'));
-const [targetPath, codemodId] = positionalArgs;
-
-if (!targetPath) {
-  throw new Error('❌ Usage: run-codemods <targetPath> [<lib>/<component>/<action>] [--dry]');
-}
-
-if (!fs.existsSync(targetPath)) {
-  throw new Error(`❌ Path "${targetPath}" does not exist.`);
-}
+const prompts = require('prompts');
 
 const codemodsDir = path.join(__dirname, '../lib/codemods');
 
-function readDirs(dir) {
-  return fs.readdirSync(dir).filter((entry) => fs.statSync(path.join(dir, entry)).isDirectory());
+const onCancel = () => process.exit(0);
+
+function getCodemods() {
+  return globSync('*/*/*/index.js', { cwd: codemodsDir }).map((file) => ({
+    id: path.dirname(file),
+    path: path.join(codemodsDir, file),
+  }));
 }
 
-// Discover codemods following <lib>/<component>/<action>/index.js convention
-function discoverCodemods() {
-  return readDirs(codemodsDir).flatMap((lib) =>
-    readDirs(path.join(codemodsDir, lib)).flatMap((component) =>
-      readDirs(path.join(codemodsDir, lib, component))
-        .map((action) => ({ id: `${lib}/${component}/${action}`, path: path.join(codemodsDir, lib, component, action, 'index.js') }))
-        .filter(({ path: indexPath }) => fs.existsSync(indexPath)),
-    ),
-  );
-}
+async function runCodemods(targetPath, codemods, isDryRun) {
+  console.log(`\n🛠  ${codemods.length} codemod(s) sur : ${targetPath}${isDryRun ? ' (dry run)' : ''}\n`);
 
-let codemods;
+  const isDirectory = fs.statSync(targetPath).isDirectory();
+  const files = isDirectory ? globSync(`${targetPath}/**/*.{ts,tsx}`) : [targetPath];
+  const updatedFiles = new Set();
 
-if (codemodId) {
-  const indexPath = path.join(codemodsDir, codemodId, 'index.js');
-  if (!fs.existsSync(indexPath)) {
-    throw new Error(`❌ Codemod "${codemodId}" not found. Available: ${discoverCodemods().map((c) => c.id).join(', ')}`);
-  }
-  codemods = [{ id: codemodId, path: indexPath }];
-} else {
-  codemods = discoverCodemods();
-}
-
-if (codemods.length === 0) {
-  console.log('✅ No codemods to apply.');
-}
-
-console.log(`🛠  Found ${codemods.length} codemod(s) to apply to: ${targetPath}`);
-
-// Utility to recursively collect all .ts/.tsx files
-function getAllFiles(dir) {
-  let results = [];
-  for (const entry of fs.readdirSync(dir)) {
-    const fullPath = path.join(dir, entry);
-    const stat = fs.statSync(fullPath);
-    if (stat.isDirectory()) {
-      results = [...results, ...getAllFiles(fullPath)];
-    } else if (fullPath.endsWith('.ts') || fullPath.endsWith('.tsx')) {
-      results.push(fullPath);
-    }
-  }
-  return results;
-}
-
-const filesToTransform = fs.statSync(targetPath).isDirectory() ? getAllFiles(targetPath) : [targetPath];
-const updatedFiles = new Set();
-
-// Execute each codemod
-(async () => {
   for (const codemod of codemods) {
-    const transform = require(codemod.path);
     console.log(`➡️  Running codemod: ${codemod.id}`);
+    const transform = require(codemod.path);
 
     // eslint-disable-next-line no-await-in-loop
     await Promise.all(
-      filesToTransform.map(async (filePath) => {
+      files.map(async (filePath) => {
         const source = fs.readFileSync(filePath, 'utf8');
-
         try {
           const transformed = await transform(
             { path: filePath, source },
@@ -97,23 +44,26 @@ const updatedFiles = new Set();
             { printOptions: { quote: 'single', trailingComma: true } },
           );
 
-          if (typeof transformed === 'string' && transformed !== source) {
-            if (isDryRun) {
-              console.log(`🔍 ${filePath}`);
-              const diff = diffLines(source, transformed);
-              diff.forEach((part) => {
-                const color = part.added ? '\u001B[32m' : part.removed ? '\u001B[31m' : '\u001B[0m';
-                const prefix = part.added ? '+' : part.removed ? '-' : ' ';
-                const lines = part.value.split('\n').map((line) => `${prefix} ${line}`);
-                process.stdout.write(`${color}${lines.join('\n')}\u001B[0m\n`);
-              });
-            } else {
-              fs.writeFileSync(filePath, transformed, 'utf8');
-              console.log(`✅ Updated: ${filePath}`);
-            }
+          if (typeof transformed !== 'string' || transformed === source) return;
 
-            updatedFiles.add(filePath);
+          if (isDryRun) {
+            console.log(`🔍 ${filePath}`);
+            diffLines(source, transformed).forEach((part) => {
+              const color = part.added ? '\u001B[32m' : part.removed ? '\u001B[31m' : '\u001B[0m';
+              const prefix = part.added ? '+' : part.removed ? '-' : ' ';
+              process.stdout.write(
+                `${color}${part.value
+                  .split('\n')
+                  .map((l) => `${prefix} ${l}`)
+                  .join('\n')}\u001B[0m\n`,
+              );
+            });
+          } else {
+            fs.writeFileSync(filePath, transformed, 'utf8');
+            console.log(`✅ Updated: ${filePath}`);
           }
+
+          updatedFiles.add(filePath);
         } catch (error) {
           if (error.message.includes('TSSatisfiesExpression')) {
             console.warn(`⚠️ Skipping unsupported file (satisfies): ${filePath}`);
@@ -126,9 +76,58 @@ const updatedFiles = new Set();
   }
 
   if (isDryRun) {
-    console.log(`🚧 Dry run complete. ${updatedFiles.size} file(s) would be modified.`);
-    console.log('Run without --dry to apply changes.');
+    console.log(`\n🚧 Dry run terminé. ${updatedFiles.size} fichier(s) seraient modifiés.`);
   } else {
-    console.log(`🏁 All codemods done. ${updatedFiles.size} file(s) modified.`);
+    console.log(`\n🏁 Terminé. ${updatedFiles.size} fichier(s) modifiés.`);
   }
-})();
+}
+
+async function main() {
+  const allCodemods = getCodemods();
+
+  if (allCodemods.length === 0) {
+    console.log('✅ Aucun codemod trouvé.');
+    return;
+  }
+
+  const { targetPath } = await prompts(
+    { type: 'text', name: 'targetPath', message: 'Sur quel path exécuter les codemods ?', initial: './' },
+    { onCancel },
+  );
+
+  if (!fs.existsSync(targetPath)) {
+    throw new Error(`❌ Le chemin "${targetPath}" n'existe pas.`);
+  }
+
+  const { selected } = await prompts(
+    {
+      type: 'multiselect',
+      name: 'selected',
+      message: 'Sélectionne les codemods à exécuter',
+      choices: allCodemods.map((c) => ({ title: c.id, value: c.id })),
+      hint: 'Espace pour sélectionner · Entrée pour valider',
+      instructions: false,
+      min: 1,
+    },
+    { onCancel },
+  );
+
+  const codemods = allCodemods.filter((c) => selected.includes(c.id));
+
+  const { isDryRun } = await prompts(
+    {
+      type: 'confirm',
+      name: 'isDryRun',
+      message: 'Dry run ?',
+      initial: false,
+    },
+    { onCancel },
+  );
+
+  await runCodemods(targetPath, codemods, isDryRun);
+}
+
+main().catch((error) => {
+  console.error(error.message);
+  process.exit(1);
+});
