@@ -15,7 +15,7 @@ if (!transformerName || !globPaths) {
   throw new Error('Usage: ornikar-migrate <transformer-name> <glob-paths>');
 }
 
-const transformPath = path.resolve(__dirname, `../lib/transforms/${transformerName}.js`);
+const transformPath = path.resolve(__dirname, `../lib/codemods/${transformerName}.js`);
 const paths = glob.sync(globPaths);
 
 if (paths.length === 0) {
