@@ -28,7 +28,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@ornikar/eslint-config": "21.3.0",
+    "@ornikar/eslint-config": "22.5.1",
     "@ornikar/prettier-config": "9.0.1",
     "@ornikar/repo-config": "15.2.1",
     "@yarnpkg/parsers": "2.5.1",
