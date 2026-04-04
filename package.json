@@ -37,7 +37,7 @@
     "jest": "30.2.0"
   },
   "dependencies": {
-    "@ornikar/monorepo-config": "13.0.0",
+    "@ornikar/monorepo-config": "14.2.1",
     "diff": "5.0.0",
     "emoji-regex": "10.2.1",
     "glob": "10.3.10",
