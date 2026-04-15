@@ -2,7 +2,7 @@
   "name": "@ornikar/yo",
   "version": "0.0.1",
   "type": "commonjs",
-  "packageManager": "yarn@4.0.1",
+  "packageManager": "yarn@4.13.0",
   "engines": {
     "node": ">=22.22.0"
   },
@@ -31,7 +31,7 @@
     "@ornikar/eslint-config": "21.3.0",
     "@ornikar/prettier-config": "9.0.1",
     "@ornikar/repo-config": "15.2.1",
-    "@yarnpkg/parsers": "2.5.1",
+    "@yarnpkg/parsers": "2.6.0",
     "check-package-dependencies": "6.8.0",
     "eslint": "8.57.1",
     "jest": "30.2.0"
