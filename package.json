@@ -52,5 +52,10 @@
     "yaml": "2.3.3",
     "yeoman-environment": "3.9.1",
     "yeoman-generator": "5.6.1"
+  },
+  "dependenciesMeta": {
+    "unrs-resolver": {
+      "built": true
+    }
   }
 }
