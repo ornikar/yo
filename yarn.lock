@@ -652,45 +652,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:20.5.2":
-  version: 20.5.2
-  resolution: "@commitlint/cli@npm:20.5.2"
+"@commitlint/cli@npm:20.5.3":
+  version: 20.5.3
+  resolution: "@commitlint/cli@npm:20.5.3"
   dependencies:
     "@commitlint/format": "npm:^20.5.0"
-    "@commitlint/lint": "npm:^20.5.0"
-    "@commitlint/load": "npm:^20.5.2"
+    "@commitlint/lint": "npm:^20.5.3"
+    "@commitlint/load": "npm:^20.5.3"
     "@commitlint/read": "npm:^20.5.0"
     "@commitlint/types": "npm:^20.5.0"
     tinyexec: "npm:^1.0.0"
     yargs: "npm:^17.0.0"
   bin:
     commitlint: ./cli.js
-  checksum: 10/35433b69e559982273b9cd6fee27a6a5461ed03f4fa8c70108051abbe871623b02160b18f5464f58ebceaf373f9e8479e118a218f6af2742f3a535a692a515f7
+  checksum: 10/a849f47638e42c3a5f1e46f924bad76041396d4b43f21ef00242710592e488461b845b5e993cb892482a21b76d2770e7a4ee0deae4758a6cbc3980034bf43d2b
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^20.0.0":
+"@commitlint/config-conventional@npm:^20.5.3":
   version: 20.5.3
   resolution: "@commitlint/config-conventional@npm:20.5.3"
   dependencies:
     "@commitlint/types": "npm:^20.5.0"
     conventional-changelog-conventionalcommits: "npm:^9.2.0"
   checksum: 10/77b27d1d0c47d1f7f3bd947c471249cea4e286a8094f5d62740b6a163374d997a26098cfacb5f0fa4478f50450a10968f5ef5fec2dea06f34a9412bc7935fb46
-  languageName: node
-  linkType: hard
-
-"@commitlint/config-lerna-scopes@npm:^20.0.0":
-  version: 20.4.3
-  resolution: "@commitlint/config-lerna-scopes@npm:20.4.3"
-  dependencies:
-    "@commitlint/config-workspace-scopes": "npm:^20.4.3"
-    fast-glob: "npm:^3.3.3"
-  peerDependencies:
-    lerna: "*"
-  peerDependenciesMeta:
-    lerna:
-      optional: true
-  checksum: 10/316c01fc904770a459af599d82f190e3f9dbc461a2c0f8fd29f8381efc0829152056d006e63e526dd7a0d83d8ccd8f8d554ec88d35d3cc4f12a0fc434c76ce61
   languageName: node
   linkType: hard
 
@@ -750,7 +735,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/lint@npm:^20.5.0":
+"@commitlint/lint@npm:^20.5.3":
   version: 20.5.3
   resolution: "@commitlint/lint@npm:20.5.3"
   dependencies:
@@ -762,7 +747,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/load@npm:^20.5.2":
+"@commitlint/load@npm:^20.5.3":
   version: 20.5.3
   resolution: "@commitlint/load@npm:20.5.3"
   dependencies:
@@ -2221,13 +2206,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ornikar/commitlint-config@npm:8.2.0":
-  version: 8.2.0
-  resolution: "@ornikar/commitlint-config@npm:8.2.0"
+"@ornikar/commitlint-config@npm:8.3.0":
+  version: 8.3.0
+  resolution: "@ornikar/commitlint-config@npm:8.3.0"
   dependencies:
-    "@commitlint/config-conventional": "npm:^20.0.0"
-    "@commitlint/config-lerna-scopes": "npm:^20.0.0"
-  checksum: 10/41eb337842dd4a5a59a044d35b9748322be3496854aa9f087dd5384868d5ae630001b49d1dd75204a245a71f987261aca386d9b8cbd9dbc41de0e1cb566b7976
+    "@commitlint/config-conventional": "npm:^20.5.3"
+    "@commitlint/config-workspace-scopes": "npm:^20.4.3"
+  checksum: 10/458ee9360d151f3e0e87ff037e1615545e25580603e21aa7366ec3d28f1f56999fbde3dd0824bde911b068e744740803463301e79857437d5229463625ad0090
   languageName: node
   linkType: hard
 
@@ -2300,12 +2285,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ornikar/repo-config@npm:15.3.0":
-  version: 15.3.0
-  resolution: "@ornikar/repo-config@npm:15.3.0"
+"@ornikar/repo-config@npm:15.3.1":
+  version: 15.3.1
+  resolution: "@ornikar/repo-config@npm:15.3.1"
   dependencies:
-    "@commitlint/cli": "npm:20.5.2"
-    "@ornikar/commitlint-config": "npm:8.2.0"
+    "@commitlint/cli": "npm:20.5.3"
+    "@ornikar/commitlint-config": "npm:8.3.0"
     husky: "npm:8.0.3"
     lint-staged: "npm:15.5.2"
     prettier-plugin-properties: "npm:0.3.0"
@@ -2319,7 +2304,7 @@ __metadata:
     ornikar-prettier-check: ./bin/ornikar-prettier-check.sh
     ornikar-prettier-fix: ./bin/ornikar-prettier-fix.sh
     ornikar-repo-config-postinstall: ./bin/ornikar-repo-config-postinstall.js
-  checksum: 10/96559ba566b6f7bf3ad1f95e1caacb29501d24c80599338bc02928e269c8de23aa9d4cc661114528c2afc1059e284ecb72a9de80351f5eaec41ba8d53609f406
+  checksum: 10/7f439bc0f6126b8a528a50be599659db9533c545750c864c877002a522d8c712883a5892cf3c9f1708c0177d96e6b1bedee5d640939f87c36c46b4ea76e6c1d8
   languageName: node
   linkType: hard
 
@@ -2330,7 +2315,7 @@ __metadata:
     "@ornikar/eslint-config": "npm:21.3.0"
     "@ornikar/monorepo-config": "npm:13.0.0"
     "@ornikar/prettier-config": "npm:9.0.1"
-    "@ornikar/repo-config": "npm:15.3.0"
+    "@ornikar/repo-config": "npm:15.3.1"
     "@yarnpkg/parsers": "npm:2.6.0"
     check-package-dependencies: "npm:6.8.0"
     diff: "npm:5.0.0"
@@ -5797,7 +5782,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.0.3, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.3":
+"fast-glob@npm:^3.0.3, fast-glob@npm:^3.2.9":
   version: 3.3.3
   resolution: "fast-glob@npm:3.3.3"
   dependencies:
