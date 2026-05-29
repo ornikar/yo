@@ -2132,12 +2132,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ornikar/eslint-config@npm:22.7.4":
-  version: 22.7.4
-  resolution: "@ornikar/eslint-config@npm:22.7.4"
+"@ornikar/eslint-config@npm:24.0.0":
+  version: 24.0.0
+  resolution: "@ornikar/eslint-config@npm:24.0.0"
   dependencies:
     "@eslint/eslintrc": "npm:^3.3.5"
-    "@ornikar/eslint-plugin-ornikar": "npm:22.7.4"
+    "@ornikar/eslint-plugin-ornikar": "npm:24.0.0"
     eslint-config-airbnb-base: "npm:^15.0.0"
     eslint-config-prettier: "npm:^10.0.0"
     eslint-import-resolver-typescript: "npm:^4.4.4"
@@ -2151,15 +2151,15 @@ __metadata:
   peerDependencies:
     eslint: ^8.57.1 || ^9.0.0
     prettier: ^2.2.1
-  checksum: 10/2a81aaab68edae2c31bd7972eccf249e4229523d19023bfeb85b3d7ec9e474480e86e1d253565624ba767c5ce702f22936e076ee9ae9382ec4c3cf8a8a60bc3a
+  checksum: 10/0762caaa8c12603def9c2eb241b551a5b991b0fbcd4ced0e0e6e9443d981acb16f6fcbf43b00647ba0d136fb2e44421ad37169e48037fdfab2825b0a1dfeedb5
   languageName: node
   linkType: hard
 
-"@ornikar/eslint-plugin-ornikar@npm:22.7.4":
-  version: 22.7.4
-  resolution: "@ornikar/eslint-plugin-ornikar@npm:22.7.4"
+"@ornikar/eslint-plugin-ornikar@npm:24.0.0":
+  version: 24.0.0
+  resolution: "@ornikar/eslint-plugin-ornikar@npm:24.0.0"
   dependencies:
-    "@ornikar/eslint-config": "npm:22.7.4"
+    "@ornikar/eslint-config": "npm:24.0.0"
     "@typescript-eslint/utils": "npm:8.55.0"
     eslint-plugin-react: "npm:^7.33.2"
     ts-unused-exports: "npm:^10.0.1"
@@ -2170,7 +2170,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10/f768e7c9a520fdf4285c209429ed251cad00024ed36a0683bad64f54ddccc56622f7f5cd21618adb08a4bca2e1e2b5667c79e8673201d6423ccd41f69645e2df
+  checksum: 10/711de9f425e9ea2eb2793ba4f93c01f34bdb5059761a16d435cdf7dda80e377c3616da9d61c32262c54832e669db2774159eac6b80c8433485773dae16a58777
   languageName: node
   linkType: hard
 
@@ -2227,7 +2227,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ornikar/yo@workspace:."
   dependencies:
-    "@ornikar/eslint-config": "npm:22.7.4"
+    "@ornikar/eslint-config": "npm:24.0.0"
     "@ornikar/monorepo-config": "npm:14.3.0"
     "@ornikar/prettier-config": "npm:9.0.1"
     "@ornikar/repo-config": "npm:15.3.1"
