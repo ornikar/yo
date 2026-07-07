@@ -2219,9 +2219,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ornikar/monorepo-config@npm:14.3.0":
-  version: 14.3.0
-  resolution: "@ornikar/monorepo-config@npm:14.3.0"
+"@ornikar/monorepo-config@npm:14.3.1":
+  version: 14.3.1
+  resolution: "@ornikar/monorepo-config@npm:14.3.1"
   dependencies:
     "@lerna-lite/cli": "npm:^5.2.0"
     "@lerna-lite/version": "npm:^5.2.0"
@@ -2232,7 +2232,7 @@ __metadata:
     monorepo-config-generate-eslintrc-files: ./bin/generate-eslintrc-files.mjs
     monorepo-config-generate-tsconfig-files: ./bin/generate-tsconfig-files.mjs
     ornikar-monorepo-update-peer-dependencies: ./bin/update-peer-dependencies.mjs
-  checksum: 10/a3d5fd3875491fffe68b0f290919c2af2f47f7c279c2565e97551c74258d8e5c15ead20001ca64c24a1c227f7df710e5520e6163e9b84c81e2eaa5717dfd21ad
+  checksum: 10/f1d66f11c87cd69d0d1cfd77ec15196ee3205159202ef6e833d7d05a54e72443b10d16d6dfc22fd352e8fb4abae4bae321eb9787b1d14fb9f72a8d17b1b6604f
   languageName: node
   linkType: hard
 
@@ -2273,7 +2273,7 @@ __metadata:
   resolution: "@ornikar/yo@workspace:."
   dependencies:
     "@ornikar/eslint-config": "npm:24.0.0"
-    "@ornikar/monorepo-config": "npm:14.3.0"
+    "@ornikar/monorepo-config": "npm:14.3.1"
     "@ornikar/prettier-config": "npm:9.0.2"
     "@ornikar/repo-config": "npm:15.3.2"
     "@yarnpkg/parsers": "npm:2.6.0"
