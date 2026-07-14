@@ -33,7 +33,7 @@
     "@ornikar/repo-config": "15.3.2",
     "@yarnpkg/parsers": "2.6.0",
     "check-package-dependencies": "6.8.0",
-    "eslint": "9.39.4",
+    "eslint": "9.39.5",
     "jest": "30.2.0",
     "typescript": "5.9.3"
   },
